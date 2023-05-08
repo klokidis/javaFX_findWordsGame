@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #152744;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dimitrisklokidisjavafx210049.Scene1Controller">
+   <children>
+      <Button fx:id="scene1Button" layoutX="313.0" layoutY="315.0" mnemonicParsing="false" onAction="#SwitchScene" prefHeight="33.0" prefWidth="91.0" style="-fx-background-color: #367591;" text="START" textFill="#c4d1ff" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" />
+      <Label layoutX="94.0" layoutY="76.0" prefHeight="130.0" prefWidth="633.0" style="-fx-background-color: #152744;" text="Welcome to the word hunter game! Your goal is to create as many words as possible using a limited set of letters provided to you. You can only use each letter once in each word you create. Let's start!" textAlignment="CENTER" textFill="#dfedff" wrapText="true" AnchorPane.bottomAnchor="244.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="76.0">
+         <font>
+            <Font name="Monospaced Regular" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
