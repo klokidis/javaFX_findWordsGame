@@ -3652,7 +3652,6 @@ fuzzy
 g
 git
 gin
-ga
 gabriel
 gadgets
 gage
@@ -6231,7 +6230,6 @@ partnership
 partnerships
 parts
 party
-pas
 paso
 pass
 passage
@@ -6277,12 +6275,9 @@ payments
 paypal
 payroll
 pays
-pb
 pc
 pci
 pcs
-pct
-pd
 pda
 pdas
 pdf
@@ -7997,6 +7992,7 @@ snapshot
 snow
 snowboard
 so
+sock
 soa
 soap
 soc

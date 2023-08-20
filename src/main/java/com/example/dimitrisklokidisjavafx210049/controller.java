@@ -57,7 +57,7 @@ public class controller implements Initializable  {
         private Label textOut;
         private char[] taken = new char[9];
         public char[] taken2 = new char[9];
-        public List<String> inputedWords = new ArrayList<>();
+        public List<String> inputtedWords = new ArrayList<>();
 
 
         //right screen
@@ -65,7 +65,6 @@ public class controller implements Initializable  {
         public void initialize(URL url, ResourceBundle resourceBundle) {
             tableColum.setCellValueFactory(new PropertyValueFactory<>("word"));
             setLetters();
-
         }
 
         @FXML
@@ -73,13 +72,13 @@ public class controller implements Initializable  {
           String word =textField.getText().trim();
           words oneWord = new words(word);
           ObservableList<words> someWords = TableOfWords.getItems();
-          if(checkWord(word) && !wordIsAlreadyIn(word) && !word.isEmpty() && checkWord2(word) && word.length()>1 && checkRepeat(word)){
+          if(checkWordInFile(word) && !wordIsAlreadyIn(word) && !word.isEmpty() && checkWordCharsIfExist(word) && word.length()>1 && checkRepeat(word)){
               someWords.add(oneWord);
               TableOfWords.setItems(someWords);
               textField.clear();
               textOut.setText("Well done!!:)");
               textOut.setTextFill(Color.GREEN);
-              inputedWords.add(word);
+              inputtedWords.add(word);
           }else {
               textOut.setText("invalid input :(");
               textOut.setTextFill(Color.RED);
@@ -112,8 +111,8 @@ public class controller implements Initializable  {
             TableOfWords.getItems().clear();
             textField.clear();
             textOut.setTextFill(Color.WHITE);
-            if (inputedWords != null) {
-                inputedWords.clear();
+            if (inputtedWords != null) {
+                inputtedWords.clear();
             }
             textOut.setText("lets start finding words!:)");
         }
@@ -141,13 +140,13 @@ public class controller implements Initializable  {
               return b;
         }
 
-        public boolean checkWord(String word){
+        public boolean checkWordInFile(String word){
            File file = new File("src/main/java/com/example/dimitrisklokidisjavafx210049/engWords.txt");
            try {
               Scanner scanner = new Scanner(file);
               while (scanner.hasNextLine()) {
-                  String line = scanner.nextLine();
-                  if (line.toLowerCase().contains(word.toLowerCase()) && line.matches(".*\\b" + word.toLowerCase() + "\\b.*")) {
+                  String lineWord = scanner.nextLine();
+                  if (lineWord.toLowerCase().contains(word.toLowerCase()) && lineWord.matches(".*\\b" + word.toLowerCase() + "\\b.*")) {
                     return true;
                   }
               }
@@ -157,7 +156,7 @@ public class controller implements Initializable  {
         return false;
         }
 
-        public boolean checkWord2(String word){
+        public boolean checkWordCharsIfExist(String word){
             for (int i = 0; i < word.length(); i++) {
                char c = word.charAt(i);
                 boolean found = false;
@@ -175,8 +174,8 @@ public class controller implements Initializable  {
         }
 
     public boolean wordIsAlreadyIn(String word) {
-        for (int i = 0; i < inputedWords.size(); i++) {
-            for (String str : inputedWords) {
+        for (int i = 0; i < inputtedWords.size(); i++) {
+            for (String str : inputtedWords) {
                 if (str.equals(word)) {
                     return true;
                 }

@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 
 
 public class Scene1Controller {
-
     public void SwitchScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
